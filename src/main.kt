@@ -340,6 +340,13 @@ fun main(args: Array<String>) {
     //method call
     calc()
 
+    //data class
+    val item = ClothingItem("shirt", "L", 19.99)
+    println(item)
+
+    item.price = 15.99
+    println(item)
+
 }
 
 fun printHeader(label:String) {
