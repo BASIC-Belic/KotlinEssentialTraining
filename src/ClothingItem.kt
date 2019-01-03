@@ -4,6 +4,19 @@
 //free functionality: auto generate toString function
 //dont need body {} bc of getter / setter methods
 // manages data objs
-data class ClothingItem(val type:String,
+//data class ClothingItem constructor(val/var arg:type)
+data class ClothingItem(var type:String?,
                         val size:String,
-                        var price:Double)
+                        var price:Double) {
+    init {
+        type = type?.toUpperCase() ?: "UNKNOWN"
+    }
+
+    //secondary constructor must daisy chain to the one before
+    //this references primary constructor
+    //it can have its own implementation block
+    //method overloading, different args or types
+    constructor(size:String, price:Double): this(null, size, price){
+//        type = "UNKNOWN"
+    }
+}
